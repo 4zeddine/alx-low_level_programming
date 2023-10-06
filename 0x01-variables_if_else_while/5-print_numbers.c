@@ -9,13 +9,7 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-int a = 48;
-while (a < 58)
-{
-putchar(a);
-a++;
-}
-putchar('\n');
+printf("0123456789\n");
 /* your code goes there */
 return (0);
 }
