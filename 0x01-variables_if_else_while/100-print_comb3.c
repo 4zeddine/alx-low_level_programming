@@ -9,9 +9,10 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-for (int i = 48 ; i < 58 ; i++)
+int i, j;
+for (i = 48 ; i < 58 ; i++)
 {
-for (int j = 49 ; j < 58 ; j++)
+for (j = 49 ; j < 58 ; j++)
 {
 if (i != j && i < j)
 {
