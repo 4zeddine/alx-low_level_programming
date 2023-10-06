@@ -9,11 +9,13 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-char alphabet[] = "abcdefghijklmnopqrstuvwxyz\n";
-for (int i = 0 ; alphabet[i] != '\0' ; i++)
+int a = 97;
+while (a < 123)
 {
-putchar(alphabet[i]);
+putchar(a);
+a++;
 }
+putchar('\n');
 /* your code goes there */
 return (0);
 }
