@@ -17,11 +17,11 @@ for (k = 48; k < 54; k++)
 {
 for (l = 48; l < 58; l++)
 {
-if (i > 51 && j > 53)
+if (i >= 50 && j >= 52)
 break;
 _putchar(i);
 _putchar(j);
-_putchar(':');
+_putchar(58);
 _putchar(k);
 _putchar(l);
 _putchar('\n');
