@@ -15,18 +15,18 @@ if (n <= 15 && n >= 0)
 for (i = 0 ; i <= n ; i++)
 {
 _putchar(48);
-for (j= 1 ; j <= n ; j++)
+for (j = 1 ; j <= n ; j++)
 {
-m = j * i ;
+m = j * i;
 _putchar(44);
 _putchar(32);
 if (m / 10 == 0)
-{ 
+{
 _putchar(32);
 _putchar(32);
 _putchar(m + 48);
 }
-else if ((m / 10) / 10 == 0 )
+else if ((m / 10) / 10 == 0)
 {
 _putchar(32);
 _putchar((m / 10) + 48);
