@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h" 
 /* more headers goes there */
 /**
 *main - the main function in our program
