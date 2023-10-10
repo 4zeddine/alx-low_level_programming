@@ -10,7 +10,7 @@
 void print_alphabet(void)
 {
 int i, size;
-size = 25;
+size = 26;
 
 for (i = 97; i < 97 + size ; i++)
 {
