@@ -16,7 +16,7 @@ int main(void)
 	for (i = 0; i < 48; i++)
 	{
 		fb = n1 + n2;
-		printf(", %ld", fn);
+		printf(", %ld", fb);
 		n1 = n2;
 		n2 = fb;
 	}
