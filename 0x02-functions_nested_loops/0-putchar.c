@@ -7,8 +7,7 @@
 *Return: return 0
 */
 /* betty style doc for function main goes there */
-int _putchar(char c);
-int main(void)
+int main(d)
 {
 int undr = '_', p = 'p', u = 'u', t = 't', c = 'c', h = 'h', a = 'a', r = 'r';
 _putchar(undr);
