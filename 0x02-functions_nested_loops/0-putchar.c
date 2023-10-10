@@ -1,13 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "main.h" 
+#include "main.h"
 /* more headers goes there */
 /**
 *main - the main function in our program
 *Return: return 0
 */
 /* betty style doc for function main goes there */
-int main()
+int main(void)
 {
 int undr = '_', p = 'p', u = 'u', t = 't', c = 'c', h = 'h', a = 'a', r = 'r';
 _putchar(undr);
