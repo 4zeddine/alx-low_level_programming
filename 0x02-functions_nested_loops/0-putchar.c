@@ -7,7 +7,7 @@
 *Return: return 0
 */
 /* betty style doc for function main goes there */
-int main(d)
+int main()
 {
 int undr = '_', p = 'p', u = 'u', t = 't', c = 'c', h = 'h', a = 'a', r = 'r';
 _putchar(undr);
