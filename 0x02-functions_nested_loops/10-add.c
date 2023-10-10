@@ -4,8 +4,8 @@
  * add - Adds two integers and returns
  * the result.
  *
- * @a: number one.
- * @b: number two.
+ * @i: number one.
+ * @j: number two.
  *
  * Return: Add of number one and number two.
  */
