@@ -8,11 +8,11 @@
 int main(void)
 {
 long int i, num = 612852475143;
-for (i = 2; i <= n; i++)
+for (i = 2; i <= num; i++)
 {
-if (n % i == 0)
+if (num % i == 0)
 {
-n /= i;
+num /= i;
 i--;
 }
 }
