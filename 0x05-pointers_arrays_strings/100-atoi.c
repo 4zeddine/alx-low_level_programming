@@ -30,5 +30,5 @@ for (i = count - size; i < count; i++)
 num = num + ((*(s + i) - 48) * m);
 m /= 10;
 }
-return (num * sign);
+return (num *sign);
 }
