@@ -15,6 +15,7 @@ int i = 0,size = 0;
 while (src[i] != '\0')
 {
 size++;
+i++;
 }
 for (i = 0; i <= size ; i++)
 {
