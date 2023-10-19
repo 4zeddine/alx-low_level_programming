@@ -20,7 +20,7 @@ while (*(str + count) != '\0')
 {
 for (i = 0; i < 13; i++)
 {
-if (*(str + count) == sep_words[i])
+if (*(str + count) == sep[i])
 {
 if ((*(str + (count + 1)) >= 97) && (*(str + (count + 1)) <= 122))
 *(str + (count + 1)) = *(str + (count + 1)) - 32;
