@@ -12,9 +12,9 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 int size1 = 0, size2 = 0, i, b = 0, f, s, d = 0;
-while (n1[size] != '\0')
+while (n1[size1] != '\0')
 size1++;
-while (n2[size] != '\0')
+while (n2[size2] != '\0')
 size2++;
 if (size1 > size2)
 b = size1;
