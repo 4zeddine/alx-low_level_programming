@@ -8,11 +8,11 @@
 
 void print_number(int n)
 {
-int m, l, count;
+unsigned int m, l, count;
 if (n < 0)
 {
 _putchar('-');
-m = -n ;
+m = -n;
 }
 else
 {
@@ -20,7 +20,7 @@ m = n;
 }
 l = m;
 count = 1;
-while ( l > 9)
+while (l > 9)
 {
 l /= 10;
 count *= 10;
