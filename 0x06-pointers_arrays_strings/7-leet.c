@@ -15,9 +15,9 @@ while (*(str + i) != '\0')
 {
 for (j = 0 ; j < 5 ; j++)
 {
-if (*(str + i) == letter[j] || *(str + i) == letter[j] - 32)
+if (*(str + i) == letters[j] || *(str + i) == letters[j] - 32)
 {
-*(str + i) = nums[i] + 48;
+*(str + i) = nums[j] + 48;
 }
 }
 i++;
