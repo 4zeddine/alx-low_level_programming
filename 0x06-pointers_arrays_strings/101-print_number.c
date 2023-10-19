@@ -8,21 +8,25 @@
 
 void print_number(int n)
 {
-int count = 1, m, l;
-m = n;
+int m, l, count;
 if (n < 0)
 {
-_putchar('-');
-m = -n;
+putchar('-');
+m = -n ;
 }
-
-while (m / 10 != 0)
+else
 {
-m /= 10;
+m = n;
+}
+l = m;
+count = 1;
+while (d > 9)
+{
+l /= 10;
 count *= 10;
 }
-for (; count <= 1 ; count /= 10)
+for (; count >= 1; count /= 10)
 {
-_putchar(((m / count) % 10) + 48);
+putchar(((m / count) % 10) + 48);
 }
 }
