@@ -20,7 +20,7 @@ m = n;
 }
 l = m;
 count = 1;
-while (d > 9)
+while ( l > 9)
 {
 l /= 10;
 count *= 10;
