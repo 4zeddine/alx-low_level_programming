@@ -32,6 +32,6 @@ else if (cents >= 1)
 cents -= 1;
 numc++;
 }
-printf("%d\n", ncoins);
+printf("%d\n", numc);
 return (0);
 }
