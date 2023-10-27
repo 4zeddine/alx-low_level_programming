@@ -12,9 +12,7 @@
 int main(int argc, char *argv[])
 {
 int i, j, sum = 0;
-if (argc == 1)
-printf("%d\n", 0);
-for (i = 0; i < argc; i++)
+for (i = 1; i < argc; i++)
 {
 for (j = 0; argv[i][j] != '\0'; j++)
 {
