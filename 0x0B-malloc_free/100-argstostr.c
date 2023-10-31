@@ -28,7 +28,7 @@ if (p == NULL)
 return (NULL);
 for (i = 0; i < ac ; i++)
 {
-for (j = 0; av[j] != '\0'; j++, cn++)
+for (j = 0; av[i][j] != '\0'; j++, cn++)
 p[cn] = av[i][j];
 p[cn] = '\n';
 cn++;
