@@ -36,7 +36,7 @@ return (NULL);
 }
 for (i = 0; i < (size1 + size2 + 1); i++)
 {
-if (i <= size1)
+if (i < size1)
 p[i] = s1[i];
 else
 p[i] = s2[i - size1];
