@@ -42,6 +42,9 @@ return (NULL);
 n = wordcount(str);
 if (n == 1)
 return (NULL);
+p = (char **)malloc(sizeof(char *) * n);
+if (p == NULL)
+return (NULL);
 p[n - 1] = NULL;
 i = 0;
 while (str[i])
