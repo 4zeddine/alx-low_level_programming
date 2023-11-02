@@ -1,91 +1,113 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
- * _puts - print a string
- * @s: input string.
+ * _isdigit - checks if character is digit
+ * @c: the character to check
  *
- * Return: no return.
+ * Return: 1 if digit, 0 if not 
  */
+int _isdigit(int c)
+{
+return (c >= '0' && c <= '9');
+}
 
-void _puts(char *s)
+/**
+ * _strlen - returns the length of a string
+ * @s: input of the string to check
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
 {
 int i = 0;
 while (s[i] != '\0')
-{
-_putchar(s[i]);
 i++;
-}
-}
-
-/**
- * _atoi - convert arguments strings to integers.
- * @s: input string.
- *
- * Return: return the integer.
- */
-
-int _atoi(const char *s)
-{
-int sign = 1;
-unsigned long int i, res = 0, fn;
-for (fn = 0; (s[fn] < 48 || s[fn] > 57); fn++)
-{
-if (s[fn] == '-')
-{
-sign = -1;
-}
-}
-for (i = fn; s[i] >= 48 && s[i] <= 57; i++)
-{
-res *= 10;
-res += (s[i] - 48);
-}
-return (sign *res);
+return (i);
 }
 
 /**
- * print_num - print an integer
- * @n: input of number.
+ * big_multiply - multiply two big number strings
+ * @s1: the first big number string
+ * @s2: the second big number string
  *
- * Return: no return.
+ * Return: the result of the multiplication
  */
+char *big_multiply(char *s1, char *s2)
+{
+char *p;
+int l1, l2, a, b, c, x;
 
-void print_num(unsigned long int n)
+l1 = _strlen(s1);
+l2 = _strlen(s2);
+p = malloc(a = x = l1 + l2);
+if (!p)
+printf("Error\n"), exit(98);
+while (a--)
+p[a] = 0;
+
+for (l1--; l1 >= 0; l1--)
 {
-unsigned long int i = 0, res, div = 1;
-while ((n / div) > 9)
+if (!_isdigit(s1[l1]))
 {
-div *= 10;
-i++;
+free(p);
+printf("Error\n"), exit(98);
 }
-for (; div >= 1; n %= div, div /= 10)
+a = s1[l1] - '0';
+c = 0;
+
+for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
 {
-res = n / div;
-_putchar(res + '0');
+if (!_isdigit(s2[l2]))
+{
+free(p);
+printf("Error\n"), exit(98);
 }
+b = s2[l2] - '0';
+
+c += p[l1 + l2 + 1] + (a * b);
+p[l1 + l2 + 1] = c % 10;
+
+c /= 10;
 }
+if (c)
+p[l1 + l2 + 1] += c;
+}
+return (p);
+}
+
 
 /**
- * main - prints the result of the multiplication, follow by new line.
- * @argc: inpût number of arguments
- * @argv: input of arguments vectors.
+ * main - prints the multiplication of two integers
+ * @argc: the number of arguments
+ * @argv: the argument vector
  *
- * Return: no return.
+ * Return: Always 0 on success.
  */
-
-int main(int argc, char const *argv[])
+int main(int argc, char **argv)
 {
-(void)argc;
+char *p;
+int a, c, l;
+
 if (argc != 3)
-{
-_puts("Error\n");
-exit(98);
-}
-print_num(_atoi(argv[1]) * _atoi(argv[2]));
-_putchar('\0');
+printf("Error\n"), exit(98);
 
+l = _strlen(argv[1]) + _strlen(argv[2]);
+p = big_multiply(argv[1], argv[2]);
+c = 0;
+a = 0;
+while (c < l)
+{
+if (p[c])
+a = 1;
+if (a)
+_putchar(r[c] + '0');
+c++;
+}
+if (!a)
+_putchar('0');
+_putchar('\n');
+free(p);
 return (0);
 }
-
