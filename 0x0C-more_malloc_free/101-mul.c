@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
  * _puts - print a string
  * @s: input string.
@@ -59,9 +59,10 @@ while ((n / div) > 9)
 div *= 10;
 i++;
 }
-while (div >= 1 && n %= div)
+while (div >= 1 )
 {
 res = n / div;
+n %= div;
 _putchar(res + 48);
 div /= 10;
 }
@@ -88,3 +89,4 @@ _putchar('\0');
 
 return (0);
 }
+
