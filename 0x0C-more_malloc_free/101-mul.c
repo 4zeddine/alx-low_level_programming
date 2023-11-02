@@ -1,114 +1,165 @@
 #include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
 /**
- * _isdigit - checks if character is digit
- * @c: the character to check
+ * checkIfZero - determines if any number is zero
+ * @argv: argument vector.
  *
- * Return: 1 if digit, 0 otherwise
+ * Return: no return.
  */
-int _isdigit(int c)
+
+void checkIfZero(char *argv[])
 {
-	return (c >= '0' && c <= '9');
+int i;
+int isNum1 = 1;
+int isNum2 = 1;
+
+for (i = 0; argv[1][i]; i++)
+{
+if (argv[1][i] != '0')
+{
+isNum1 = 0;
+break;
+}
+}
+
+for (i = 0; argv[2][i]; i++)
+{
+if (argv[2][i] != '0')
+{
+isNum2 = 0;
+break;
+}
+}
+
+if (isNum1 == 1 || isNum2 == 1)
+{
+printf("0\n");
+exit(0);
+}
 }
 
 /**
- * _strlen - returns the length of a string
- * @s: the string whose length to check
+ * *initializeArray- set memery to zero in a new array
+ * @ar: char array.
+ * @lar: length of the char array.
  *
- * Return: integer length of string
+ * Return: pointer of a char array.
  */
-int _strlen(char *s)
-{
-	int i = 0;
 
-	while (*s++)
-		i++;
-	return (i);
+char *initializeArray(char *ar, int lar)
+{
+int i;
+
+for (i = 0; i < lar; i++)
+{
+ar[i] = '0';
+}
+ar[lar] = '\0';
+return (ar);
 }
 
 /**
- * big_multiply - multiply two big number strings
- * @s1: the first big number string
- * @s2: the second big number string
+ * lengthNumber - determines length of the number
+ * and checks if number is in base 10.
+ * @argv: arguments vector.
+ * @n: row of the array.
  *
- * Return: the product big number string
+ * Return: length of the number.
  */
-char *big_multiply(char *s1, char *s2)
+
+int lengthNumber(char *argv[], int n)
 {
-	char *r;
-	int l1, l2, a, b, c, x;
+int length;
 
-	l1 = _strlen(s1);
-	l2 = _strlen(s2);
-	r = malloc(a = x = l1 + l2);
-	if (!r)
-		printf("Error\n"), exit(98);
-	while (a--)
-		r[a] = 0;
-
-	for (l1--; l1 >= 0; l1--)
-	{
-		if (!_isdigit(s1[l1]))
-		{
-			free(r);
-			printf("Error\n"), exit(98);
-		}
-		a = s1[l1] - '0';
-		c = 0;
-
-		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
-		{
-			if (!_isdigit(s2[l2]))
-			{
-				free(r);
-				printf("Error\n"), exit(98);
-			}
-			b = s2[l2] - '0';
-
-			c += r[l1 + l2 + 1] + (a * b);
-			r[l1 + l2 + 1] = c % 10;
-
-			c /= 10;
-		}
-		if (c)
-			r[l1 + l2 + 1] += c;
-	}
-	return (r);
+for (length = 0; argv[n][length]; length++)
+{
+if (!isdigit(argv[n][length]))
+{
+printf("Error\n");
+exit(98);
+}
 }
 
+return (length);
+}
 
 /**
- * main - multiply two big number strings
- * @argc: the number of arguments
- * @argv: the argument vector
+ * main - prints multiplication of two positive numbers.
+ * @argc: number of arguments.
+ * @argv: arguments vector.
  *
- * Return: Always 0 on success.
+ * Return: 0 - success.
  */
-int main(int argc, char **argv)
+
+int main(int argc, char *argv[])
 {
-	char *r;
-	int a, c, x;
+int length1, length2, resultLength, add, carry, i, j, k, shift;
+char *result;
 
-	if (argc != 3)
-		printf("Error\n"), exit(98);
-
-	x = _strlen(argv[1]) + _strlen(argv[2]);
-	r = big_multiply(argv[1], argv[2]);
-	c = 0;
-	a = 0;
-	while (c < x)
-	{
-		if (r[c])
-			a = 1;
-		if (a)
-			_putchar(r[c] + '0');
-		c++;
-	}
-	if (!a)
-		_putchar('0');
-	_putchar('\n');
-	free(r);
-	return (0);
+if (argc != 3)
+{
+printf("Error\n");
+exit(98);
+}
+length1 = lengthNumber(argv, 1);
+length2 = lengthNumber(argv, 2);
+checkIfZero(argv);
+resultLength = length1 + length2;
+result = malloc(resultLength + 1);
+if (result == NULL)
+{
+printf("Error\n");
+exit(98);
+}
+result = initializeArray(result, resultLength);
+k = resultLength - 1;
+i = length1 - 1;
+j = length2 - 1;
+carry = shift = 0;
+for (; k >= 0; k--, i--)
+{
+if (i < 0)
+{
+if (carry > 0)
+{
+add = (result[k] - '0') + carry;
+if (add > 9)
+{
+result[k - 1] = (add / 10) + '0';
+}
+result[k] = (add % 10) + '0';
+}
+i = length1 - 1;
+j--;
+carry = 0;
+shift++;
+k = resultLength - (1 + shift);
+}
+if (j < 0)
+{
+if (result[0] != '0')
+{
+break;
+}
+resultLength--;
+free(result);
+result = malloc(resultLength + 1);
+result = initializeArray(result, resultLength);
+k = resultLength - 1;
+i = length1 - 1;
+j = length2 - 1;
+carry = shift = 0;
+}
+if (j >= 0)
+{
+add = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (result[k] - '0') + carry;
+carry = add / 10;
+result[k] = (add % 10) + '0';
+}
+}
+printf("%s\n", result);
+return (0);
 }
