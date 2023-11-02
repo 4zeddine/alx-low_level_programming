@@ -20,7 +20,7 @@ return (NULL);
 p = malloc(sizeof(int) * (max - min + 1));
 if (p == NULL)
 return (NULL);
-for (i = 0; i <= max; i++)
-p[i] = i + min;
+for (i = 0; min <= max; i++, min++)
+p[i] = min;
 return (p);
 }
