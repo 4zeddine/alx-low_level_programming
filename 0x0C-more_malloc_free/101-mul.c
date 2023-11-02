@@ -66,7 +66,6 @@ res = n / div;
 _putchar(res + '0');
 }
 }
-}
 
 /**
  * main - prints the result of the multiplication, follow by new line.
