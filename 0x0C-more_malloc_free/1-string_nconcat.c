@@ -30,7 +30,7 @@ m = i + n;
 p = malloc(m + 1);
 if (p == NULL)
 return (NULL);
-for (k = 0; k < (m + 1); k++)
+for (k = 0; k < m; k++)
 {
 if (k <= i)
 p[k] = s1[i];
