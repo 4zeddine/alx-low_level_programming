@@ -60,12 +60,11 @@ while ((n / div) > 9)
 div *= 10;
 i++;
 }
-while (div >= 1 )
+for (; div >= 1; n %= div, div /= 10)
 {
 res = n / div;
-n %= div;
-_putchar(res + 48);
-div /= 10;
+_putchar(res + '0');
+}
 }
 }
 
