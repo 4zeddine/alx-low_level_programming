@@ -45,7 +45,7 @@ return (1);
 }
 
 /**
- * _puts - print string 
+ * _puts - print string
  * @s: string to print
  */
 void _puts(char *s)
