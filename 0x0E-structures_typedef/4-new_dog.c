@@ -50,5 +50,5 @@ for (i = 0; i < downer; i++)
 dog->owner[i] = owner[i];
 dog->owner[i] = '\0';
 
-return (p_dog);
+return (dog);
 }
