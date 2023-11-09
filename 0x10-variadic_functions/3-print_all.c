@@ -17,7 +17,7 @@ char *str;
 
 va_start(args, format);
 
-while (foramt && format[i])
+while (format && format[i])
 {
 switch (format[i++])
 {
@@ -25,15 +25,15 @@ switch (format[i++])
 		printf("%c", va_arg(args, int));
 		break;
 	case 'i':
-		printf("%i", va-arg(args, int));
+		printf("%i", va_arg(args, int));
 		break;
 	case 'f':
-		printf("%f", va-arg(args, float));
+		printf("%f", va_arg(args, double));
 		break;
 	case 's':
 		str = va_arg(args, char *);
 		if (!str)
-			s = "(nil)";
+			str = "(nil)";
 		printf("%s", str);
 		break;
 	default:
