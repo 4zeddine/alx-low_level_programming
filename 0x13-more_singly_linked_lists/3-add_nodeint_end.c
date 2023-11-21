@@ -31,5 +31,5 @@ else
 p->next = node;
 }
 
-return (node);
+return (*head);
 }
