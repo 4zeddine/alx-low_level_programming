@@ -32,6 +32,8 @@ if (idx != 0)
 	i++;
 	}
 }
+if (p == NULL && idx != 0)
+	return (NULL);
 if (idx == 0)
 {
 node->next = *head;
