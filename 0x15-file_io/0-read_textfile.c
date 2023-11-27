@@ -17,7 +17,7 @@ char *buffer;
 if (filename == NULL)
 	return (0);
 
-fd = open(filename, 0_RDONLY);
+fd = open(filename, O_RDONLY);
 
 if (fd == -1)
 	return (0);
