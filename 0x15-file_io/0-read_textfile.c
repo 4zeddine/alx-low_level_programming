@@ -28,7 +28,7 @@ if (buffer == NULL)
 	return (0);
 
 rdcount = read(fd, buffer, letters);
-wrcount = write(STDOUT_FILEEND, buffer, rdcount);
+wrcount = write(STDOUT_FILENO, buffer, rdcount);
 
 close(fd);
 
