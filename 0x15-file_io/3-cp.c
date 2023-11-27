@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h> 
+#include <stdio.h>
 
 /**
  * error_handling - checks if files can be opened.
