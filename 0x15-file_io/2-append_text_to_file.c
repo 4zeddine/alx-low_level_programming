@@ -22,15 +22,15 @@ if (fd == -1)
 	return (-1);
 
 if (text_content != NULL)
-	{
-		while (text_content[ltcount] != '\0')
-			ltcount++;
+{
+	while (text_content[ltcount] != '\0')
+		ltcount++;
 
-		wrcount = write(fd, text_count, ltcount);
+	wrcount = write(fd, text_content, ltcount);
 
-		if (wrcount == -1)
-			return (-1);
-	}
+	if (wrcount == -1)
+		return (-1);
+}
 close(fd);
 
 return (1);
