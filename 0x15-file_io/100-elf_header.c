@@ -93,14 +93,41 @@ void print_osabi(char *ptr)
 char osabi = ptr[7];
 
 printf("  OS/ABI:                            ");
-if (osabi == 0)
+switch (osabi)
+{
+case 0: 
 	printf("UNIX - System V\n");
-else if (osabi == 2)
+	break;
+case 1:
+	printf("UNIX - HP-UX\n");
+	break;
+case 2:
 	printf("UNIX - NetBSD\n");
-else if (osabi == 6)
+	break;
+case 3:
+	printf("UNIX - Linux\n");
+	break;
+case 4:
 	printf("UNIX - Solaris\n");
-else
+	break;
+case 5:
+	printf("UNIX - IRIX\n");
+	break;
+case 6:
+	printf("UNIX - FreeBSD\n");
+	break;
+case 7:
+	printf("UNIX - TRU64\n");
+	break;
+case 8:
+	printf("ARM\n");
+	break;
+case 9:
+	printf("Stand-alone (embedded)\n");
+	break;
+default:
 	printf("<unknown: %x>\n", osabi);
+}
 
 printf("  ABI Version:                       %d\n", ptr[8]);
 }
