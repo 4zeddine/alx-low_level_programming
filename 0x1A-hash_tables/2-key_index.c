@@ -15,7 +15,7 @@ unsigned long int id;
 if (!key || !size)
 	return (0);
 
-id = hash_gjb2(key) % size;
+id = hash_djb2(key) % size;
 
 return (id);
 }
