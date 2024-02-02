@@ -22,7 +22,7 @@ for (i = 0; i < ht->size; i++)
 		node = ht->array[i];
 		while (node)
 		{
-			tmp = nod->next;
+			tmp = node->next;
 			free(node->key);
 			free(node->value);
 			free(node);
