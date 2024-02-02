@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * add_n_hash - adds a node at the beginning of a hash at a given index
+ * hash_table_set - adds a value to a given key in a hash table
  *
  * @ht: hash table
  * @key: key of the hash
@@ -15,7 +15,7 @@ unsigned long int idx, i;
 hash_node_t *node;
 char *value_copy;
 
-if (!ht || !key || *key =='\0' || value == NULL)
+if (!ht || !key || *key == '\0' || value == NULL)
 	return (0);
 
 idx = key_index((const unsigned char *)key, ht->size);
@@ -47,10 +47,8 @@ if (node->key == NULL)
 	free(node);
 	return (0);
 }
-
 node->value = value_copy;
 node->next = ht->array[idx];
 ht->array[idx] = node;
-
 return (1);
 }
