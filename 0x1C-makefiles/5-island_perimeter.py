@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Defines the mesure function of an island."""
 
+
 def island_perimeter(grid):
     """Returns the perimeter of the island
-    
+
     Args:
         grid (list): list of ints representing an island.
     Returns:
