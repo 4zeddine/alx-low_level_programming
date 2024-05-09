@@ -7,7 +7,7 @@
  *
  * @list: theinput list
  * @size: the size of the array
- * @value: the value to search for 
+ * @value: the value to search for
  * Return: pointer to the first node where value is located
  * or NULL If value is not present in head or if head is NULL
  */
